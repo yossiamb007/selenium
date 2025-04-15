@@ -4,7 +4,7 @@
     <parameter name="headless" value="false"></parameter>
     <test name="Yossi Test">
         <classes>
-            <class name="com.yossi.TestGooglePage" />
+            <class name="com.yossi.SampleTest" />
         </classes>
     </test>
 </suite>
