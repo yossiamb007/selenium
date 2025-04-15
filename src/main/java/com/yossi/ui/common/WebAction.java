@@ -3,6 +3,7 @@ package com.yossi.ui.common;
 import io.qameta.allure.Step;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -19,7 +20,11 @@ public class WebAction implements IWebAction {
     }
     @Override
     public void click(WebElement element) {
-
+    try {
+        element.click();
+    }catch (Exception e){
+        //
+    }
     }
 
     @Override
@@ -52,7 +57,11 @@ public class WebAction implements IWebAction {
 
     @Override
     public void sendKeys(WebElement element, String value) {
-
+      try {
+          element.sendKeys(value);
+      }catch (Exception e){
+          //
+      }
     }
 
     @Override
@@ -96,5 +105,15 @@ public class WebAction implements IWebAction {
     @Override
     public String getText(WebElement element) {
         return element.getText();
+    }
+
+    @Override
+    public void selectFromDropDown(WebElement element, String optionText) {
+       try {
+           Select select = new Select(element);
+           select.selectByVisibleText(optionText);
+       }catch (Exception e){
+           //
+       }
     }
 }
