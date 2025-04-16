@@ -19,4 +19,5 @@ public interface IWebAction {
     void quitDriver();
     String getTitle();
     String getText(WebElement element);
+    void selectFromDropDown(WebElement element, String optionText);
 }
