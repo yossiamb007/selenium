@@ -10,7 +10,6 @@ public class SwagLoginTest extends TestBase{
     public void testLoginSuccess(){
         webAction.getUrl(SWAG_PAGE_URL);
         SwagLoginPage loginPage = new SwagLoginPage(webAction);
-
         String result = loginPage.login("standard_user", "secret_sauce");
         Assert.assertEquals(result, "Swag Labs", "Expected successful login");
     }
